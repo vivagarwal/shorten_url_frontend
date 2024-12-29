@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route , Navigate} from "react-router-dom";
-import UrlInput from "./components/Urlinput";
+import UrlInput from "./components/UrlInput";
 import './index.css';
 
 const App = () => {

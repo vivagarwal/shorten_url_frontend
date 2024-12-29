@@ -7,8 +7,7 @@ const App = () => {
   return (
       <div className="container mt-4">
         <Routes>
-        <Route path="/" element={<Navigate to="/generate" />} />
-        <Route path="/generate" element={<UrlInput />} />
+        <Route path="/" element={<UrlInput />} />
         </Routes>
     </div>
   );

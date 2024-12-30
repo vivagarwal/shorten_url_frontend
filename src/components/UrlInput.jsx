@@ -165,7 +165,17 @@ function UrlInput() {
                 name="url"
                 className="w-full pl-10 pr-4 py-2 mt-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 value={url}
-                onChange={(e) => setUrl(e.target.value)}
+                onChange={(e) => {
+                  // Replace multiple spaces with a single space and trim unnecessary spaces
+                  setUrl(e.target.value.replace(/\s+/g, " "));
+                }}
+                onInput={(e) => {
+                  // Prevent extra spaces during mobile input gestures
+                  const input = e.target.value;
+                  if (/\s{2,}/.test(input)) {
+                    setUrl(input.replace(/\s{2,}/g, " "));
+                  }
+                }}
                 required
               />
             </div>
